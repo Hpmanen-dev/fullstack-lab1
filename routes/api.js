@@ -14,6 +14,19 @@ router.post("/users", async (req, res) => {
             res.status(409)
             res.send({error: "User already exists!"})
         }else{
+
+            if(!/^[^0-9]+$/.test(req.body.name)){
+                res.status(409)
+                res.send({error: "Names does not contain numbers!"})
+                return
+            }
+            
+            if(/^[^0-9]+$/.test(req.body.age)){
+                res.status(409)
+                res.send({error: "Age does not contain letters!"})
+                return
+            }
+
             const user = new User({
                 username: req.body.username,
                 name: req.body.name,
@@ -67,10 +80,34 @@ router.put("/users/:id", async (req, res) => {
                 res.send({error: "User Already Exists!"})
                 return   
             }else{
+
+                if(!/^[^0-9]+$/.test(req.body.name)){
+                    res.status(409)
+                    res.send({error: "Names does not contain numbers!"})
+                    return
+                }
+                
+                if(/^[^0-9]+$/.test(req.body.age)){
+                    res.status(409)
+                    res.send({error: "Age does not contain letters!"})
+                    return
+                }
+
                 await User.findByIdAndUpdate({_id: req.params.id}, req.body)
                 res.send({message: "Success!"})  
             }
         }else{
+
+            if(!/^[^0-9]+$/.test(req.body.name)){
+                res.status(409)
+                res.send({error: "Names does not contain numbers!"})
+            }
+            
+            if(/^[^0-9]+$/.test(req.body.age)){
+                res.status(409)
+                res.send({error: "Age does not contain letters!"})
+            }
+
             await User.findByIdAndUpdate({_id: req.params.id}, req.body)
             res.send({message: "Success!"})  
         }

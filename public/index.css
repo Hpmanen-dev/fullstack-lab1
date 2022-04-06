@@ -1,0 +1,74 @@
+body{
+    background-color: dodgerblue;
+    color: white;
+}
+
+#mainDiv{
+}
+
+#infoDiv{
+    border: solid white 1px;
+    float: left;
+    margin-left: 5vw;
+    height: 30vh;
+    width: 45vw;
+    display: none;
+}
+
+#updateDiv{
+    border: solid white 1px;
+    float: left;
+    margin-left: 5vw;
+    height: 30vh;
+    width: 45vw;    
+    display: none;
+}
+
+#editCard{
+    margin-left: 3vw;
+}
+
+#changeAge{
+    margin-left: 0.6vw;
+}
+
+#usersTable{
+    text-align: center;
+    width: 40vw;
+    margin-left: 3vw;
+    border: 1px white solid;
+}
+
+#tableDiv{
+    float: left;
+}
+
+#newUser{
+    margin-top: 10px;
+    margin-left: 5vw;
+    display: none;
+}
+
+#update{
+    margin-left: 3vw;
+}
+
+#create{
+    margin-top: 10px;
+    margin-left: 3vw;
+}
+
+#closeInfo{
+    margin-top: 10px;
+    margin-left: 3vw;
+}
+
+#userCard{
+    margin-left: 4vw;
+    margin-top: 6vh;
+}
+
+#userID, #changeID{
+    margin-left: 3vw;
+    margin-top: 4vh;
+}

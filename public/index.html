@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Hello World! </h1>
+    <div id="mainDiv">
+        <div id="tableDiv">
+            <table id="usersTable">
+                <tr>
+                    <th> Username </th>
+                    <th> Name </th>
+                    <th> Age </th>
+                </tr>
+            </table>
+            <div id="newUser">
+                <input id="newUsername" type="text" placeholder="Username" size="10">
+                <input id="newName" type="text" placeholder="Name" size="10">
+                <input id="newAge" type="text" placeholder="Age" size="2">
+                <button onclick="javascript:createUser()"> Submit </button>
+                <button onclick="javascript:hideFields()"> Cancel </button>
+            </div>
+            <button onclick="javascript:createNew()" id="create"> New User </button>
+        </div>
+
+        <div id="infoDiv">
+            <h1 id="userID"> UserID:  </h1>
+            <div id="userCard">
+                <p id="userUsername"> Username: </p>
+                <p id="userName"> Name: </p>
+                <p id="userAge"> Age: </p>
+            </div>
+            <br>
+            <br>
+            <br>
+            <button id="closeInfo" onclick="javascript:hideInfo()"> Close </button>
+        </div>
+        <div id="updateDiv">
+            <h1 id="changeID"> UserID: </h1>
+            <br>
+            <br>
+            <div id="editCard">
+                <span>Username: </span>
+                <input type="text" id="changeUsername">
+                <br>
+                <br>
+                <span> Name: </span>
+                <input type="text" id="changeName">
+                <br>
+                <br>
+                <span> Age: </span>
+                <input type="text" id="changeAge">
+            </div>
+            <br>
+            <br>
+            <button id="update"> Save </button>
+            <button id="cancelUpdate" onclick="javascript:hideUpdate()"> Cancel </button>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

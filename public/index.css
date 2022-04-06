@@ -3,6 +3,11 @@ body{
     color: white;
 }
 
+#headline{
+    margin-top: 5vh;
+    margin-left: 3vw;
+}
+
 #infoDiv{
     border: solid white 1px;
     float: left;

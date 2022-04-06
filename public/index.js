@@ -14,6 +14,7 @@ const createButton = document.querySelector("#create")
 const newName = document.querySelector("#newName")
 const newAge = document.querySelector("#newAge")
 
+const changeUsername = document.querySelector("#changeUsername")
 const changeName = document.querySelector("#changeName")
 const changeAge = document.querySelector("#changeAge")
 const changeID = document.querySelector("#changeID")
@@ -120,6 +121,7 @@ function createUser(){
 
 function update(id){
     const details = {
+        username: changeUsername.value,
         name: changeName.value,
         age: changeAge.value
     }
@@ -142,10 +144,11 @@ function update(id){
     })
 }
 
-function openUpdate(id, name, age){
+function openUpdate(id, name, age, username){
 
     changeAge.value = age
     changeName.value = name
+    changeUsername.value = username
     changeID.textContent = "UserID: " + id
     updateDiv.style.display = "block"
     userInfo.style.display = "none"

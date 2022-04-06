@@ -5,6 +5,11 @@ const router = express.Router()
 
 router.post("/users", async (req, res) => {
     try{
+        if(req.body.username.includes("<") || req.body.name.includes("<")){
+            res.status(409)
+            res.send({error: "Please do not try to ruin my website :("})
+            return
+        }
         if(await User.findOne({username: req.body.username})){
             res.status(409)
             res.send({error: "User already exists!"})
@@ -49,8 +54,12 @@ router.get("/users/:id", async (req, res) => {
 
 router.put("/users/:id", async (req, res) => {
     try{
+        if(req.body.username.includes("<") || req.body.name.includes("<")){
+            res.status(409)
+            res.send({error: "Please do not try to ruin my website :("})
+            return
+        }
         const userExists = await User.findOne({username: req.body.username})
-        console.log(userExists);
         if(userExists){
             console.log(req.params.id != userExists._id);
             if(req.params.id != userExists._id){
